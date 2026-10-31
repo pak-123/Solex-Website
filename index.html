@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>SOLEX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-white">
+    <!-- navbar start -->
+    <nav class="bg-white fixed w-full z-20 top-0 start-0">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-4xl text-heading font-bold whitespace-nowrap">SOLE<span
+                        class="text-[#B4C542]">X</span>
+            </a>
+            <div class="flex items-center md:order-2">
+                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                    aria-expanded="false"
+                    class="flex items-center justify-center md:hidden text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-2 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm w-10 h-10 focus:outline-none">
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+                <label for="input-group-1" class="sr-only">Your Email</label>
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="input-group-1"
+                        class="block w-full  ps-9 pe-3 py-2.5 bg-neutral-secondary-medium border border-0 text-heading text-sm rounded-[5px] focus:ring-brand focus:border-brand px-2.5 py-2 shadow-xs placeholder:text-body bg-gray-100 placeholder:text-black"
+                        placeholder="Search Sneakers...">
+                </div>
+
+                <!-- Heart, Cart & User Icons -->
+                <div class="hidden md:flex items-center gap-4 ml-5">
+
+                    <!-- Wishlist / Heart -->
+                    <a href="#" class="text-black hover:text-[#B4C542] transition-colors" aria-label="Wishlist"
+                        title="Wishlist">
+                       <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg>
+                    </a>
+
+                    <!-- Shopping Cart -->
+                    <a href="#" class="text-black hover:text-[#B4C542] transition-colors" aria-label="Shopping Cart"
+                        title="Shopping Cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 3h2l2.4 12.4a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 8H6" />
+                            <circle cx="10" cy="21" r="1" fill="currentColor" />
+                            <circle cx="18" cy="21" r="1" fill="currentColor" />
+                        </svg>
+                    </a>
+
+                    <!-- User / Login -->
+                    <a href="#" class="text-black hover:text-[#B4C542] transition-colors" aria-label="Login"
+                        title="Login">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="8" r="4" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 21v-2a7 7 0 0 1 14 0v2" />
+                        </svg>
+                    </a>
+
+                </div>
+                <!-- Icons End -->
+
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+                    aria-controls="navbar-search" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M5 7h14M5 12h14M5 17h14" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <div class="relative mt-3 md:hidden">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-body" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="input-group-1"
+                        class="block w-full ps-9 pe-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand px-2.5 py-2 shadow-xs placeholder:text-body"
+                        placeholder="Search">
+                </div>
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-10 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0 hover:text-[#B4C542]"
+                            aria-current="page">Men</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:text-[#B4C542]">Women</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:text-[#B4C542]">Kids</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:text-[#B4C542]">Brands</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent hover:text-[#B4C542]">New
+                            Arrivals</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent text-red-600">Sale</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- navbar end -->
+
+
+
+<!-- hero section start -->
+ <section class="body-font bg-black text-white">
+  <div class="container mx-auto flex px-25 py-28 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-8xl text-3xl mb-4 font-bold text-white">OWN
+        <br class="hidden lg:inline-block">EVERY
+         <br class="hidden lg:inline-block"> <span class="text-[#B4C542]">STEP</span>
+      </h1>
+      <p class="mb-8 leading-relaxed">Explore the best collection of <br> branded shoes and move <br> with style and confidence.</p>
+      <div class="flex justify-center">
+        <button class="inline-flex text-black bg-[#B4C542] border-0 py-[12px] px-9 focus:outline-none hover:border-1 rounded text-1xl font-semibold cursor-pointer">Shop Now &nbsp;&nbsp;→</button>
+        <button class="ml-4 inline-flex text-white border-1 py-[12px] px-6 focus:outline-none hover:bg-white hover:text-black hover:font-semibold cursor-pointer rounded text-1xl">Explore Brands</button>
+      </div>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+      <img
+  class="object-contain w-full max-w-[600px] h-auto"
+  alt="SOLEX featured sneaker"
+  src="./images/hero.png">
+    </div>
+  </div>
+</section>
+
+ 
+<!-- TOP BRANDS SECTION START -->
+<section class="bg-white text-black py-8 md:py-10">
+
+  <div class="max-w-screen-xl mx-auto px-5 md:px-8">
+
+    <!-- Section Heading -->
+    <div class="flex items-center justify-between mb-7">
+      <h2 class="text-lg md:text-xl font-extrabold tracking-wide">
+        TOP BRANDS
+      </h2>
+
+      <a href="#"
+         class="text-xs md:text-sm font-medium hover:text-[#B4C542] transition-colors">
+        View all →
+      </a>
+    </div>
+
+   
+<!-- Brand Logos -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 items-center">
+
+  <a href="#" class="flex items-center justify-center h-22 rounded-lg hover:bg-gray-50 transition-colors">
+    <img src="./images/logo1.png" alt="Nike"
+         class="w-28 h-20 object-contain">
+  </a>
+
+  <a href="#" class="flex items-center justify-center h-16 rounded-lg hover:bg-gray-50 transition-colors">
+    <img src="./images/logo2.png" alt="Adidas"
+         class="w-33 h-20 object-contain">
+  </a>
+
+  <a href="#" class="flex items-center justify-center h-16 rounded-lg hover:bg-gray-50 transition-colors">
+    <img src="./images/logo3.png" alt="Puma"
+         class="w-33 h-35 object-contain">
+  </a>
+
+  <a href="#" class="flex items-center justify-center h-16 rounded-lg hover:bg-gray-50 transition-colors">
+    <img src="./images/logo4.png" alt="New Balance"
+         class="w-33 h-35 object-contain">
+  </a>
+
+  <a href="#" class="flex items-center justify-center h-16 rounded-lg hover:bg-gray-50 transition-colors">
+    <img src="./images/logo5.png" alt="Converse"
+         class="w-40 h-30 object-contain">
+  </a>
+
+  <a href="#" class="flex items-center justify-center h-16 rounded-lg hover:bg-gray-50 transition-colors">
+    <img src="./images/logo6.png" alt="Vans"
+         class="w-32 h-30 object-contain">
+  </a>
+    </div>
+
+  </div>
+
+</section>
+<!-- TOP BRANDS SECTION END -->
+
+
+
+<!-- SHOP BY CATEGORY START -->
+<section class="bg-white py-8 md:py-10 text-black">
+
+  <div class="max-w-screen-xl mx-auto px-5 md:px-8">
+
+    <!-- Section Heading -->
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg md:text-xl font-extrabold tracking-wide">
+        SHOP BY CATEGORY
+      </h2>
+
+      <a href="#"
+         class="text-xs md:text-sm font-medium hover:text-[#B4C542] transition-colors">
+        View all →
+      </a>
+    </div>
+
+    <!-- Category Cards -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
+
+      <!-- Running -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat1.png" alt="Running Shoes"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Running
+        </h3>
+      </a>
+
+      <!-- Lifestyle -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat2.png" alt="Lifestyle Shoes"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Lifestyle
+        </h3>
+      </a>
+
+      <!-- Basketball -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat3.png" alt="Basketball Shoes"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Basketball
+        </h3>
+      </a>
+
+      <!-- Training -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat4.png" alt="Training Shoes"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Training
+        </h3>
+      </a>
+
+      <!-- Sneakers -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat5.png" alt="Sneakers"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Sneakers
+        </h3>
+      </a>
+
+      <!-- Slides -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat6.png" alt="Slides"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Slides
+        </h3>
+      </a>
+
+      <!-- Boots -->
+      <a href="#" class="group block">
+        <div class="bg-gray-100 rounded-lg h-28 sm:h-32 flex items-center justify-center p-3 overflow-hidden">
+          <img src="./images/cat7.png" alt="Boots"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+        <h3 class="text-xs sm:text-sm text-center font-semibold mt-3 group-hover:text-[#B4C542] transition-colors">
+          Boots
+        </h3>
+      </a>
+
+    </div>
+  </div>
+
+</section>
+<!-- SHOP BY CATEGORY END -->
+
+
+
+<!-- FEATURED PRODUCTS START -->
+<section class="bg-white text-black py-8 md:py-10">
+
+  <div class="max-w-screen-xl mx-auto px-5 md:px-8">
+
+    <!-- Section Heading -->
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-lg md:text-xl font-extrabold tracking-wide">
+        FEATURED PRODUCTS
+      </h2>
+
+      <a href="#"
+         class="text-xs md:text-sm font-medium hover:text-[#B4C542] transition-colors">
+        View all →
+      </a>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5">
+
+      <!-- Product 1 -->
+      <div class="group min-w-0">
+
+        <div class="relative bg-gray-100 rounded-lg h-36 sm:h-44 md:h-48 p-3 overflow-hidden">
+
+          <span class="absolute top-2 left-2 bg-[#B4C542] text-black text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded">
+            BESTSELLER
+          </span>
+
+          <button type="button"
+                  aria-label="Add Nike Air Force 1 to wishlist"
+                  class="absolute top-2 right-2 z-10 text-gray-700 hover:!text-[#B4C542] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="w-5 h-5"
+                 fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+          </button>
+
+          <img src="./images/product1.png"
+               alt="Nike Air Force 1 07"
+               loading="lazy"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+        <div class="pt-3">
+          <h3 class="text-xs sm:text-sm font-bold truncate">
+            Nike Air Force 1 '07
+          </h3>
+
+          <p class="text-[10px] sm:text-xs text-gray-500 mt-1">
+            Men’s Shoes
+          </p>
+
+          <div class="flex items-center justify-between gap-1 mt-2">
+            <span class="text-xs sm:text-sm font-bold">$115.00</span>
+            <span class="text-[10px] sm:text-xs text-gray-600">★ 4.9</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Product 2 -->
+      <div class="group min-w-0">
+
+        <div class="relative bg-gray-100 rounded-lg h-36 sm:h-44 md:h-48 p-3 overflow-hidden">
+
+          <button type="button"
+                  aria-label="Add Adidas Superstar to wishlist"
+                  class="absolute top-2 right-2 z-10 text-gray-700 hover:!text-[#B4C542] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="w-5 h-5"
+                 fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+          </button>
+
+          <img src="./images/product2.png"
+               alt="Adidas Superstar"
+               loading="lazy"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+        <div class="pt-3">
+          <h3 class="text-xs sm:text-sm font-bold truncate">
+            Adidas Superstar
+          </h3>
+
+          <p class="text-[10px] sm:text-xs text-gray-500 mt-1">
+            Unisex Shoes
+          </p>
+
+          <div class="flex items-center justify-between gap-1 mt-2">
+            <span class="text-xs sm:text-sm font-bold">$90.00</span>
+            <span class="text-[10px] sm:text-xs text-gray-600">★ 4.8</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Product 3 -->
+      <div class="group min-w-0">
+
+        <div class="relative bg-gray-100 rounded-lg h-36 sm:h-44 md:h-48 p-3 overflow-hidden">
+
+          <span class="absolute top-2 left-2 bg-red-600 text-white text-[9px] sm:text-[10px] font-bold px-2 py-1 rounded">
+            SALE
+          </span>
+
+          <button type="button"
+                  aria-label="Add Air Jordan 1 Mid to wishlist"
+                  class="absolute top-2 right-2 z-10 text-gray-700 hover:!text-[#B4C542] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="w-5 h-5"
+                 fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+          </button>
+
+          <img src="./images/product3.png"
+               alt="Air Jordan 1 Mid"
+               loading="lazy"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+        <div class="pt-3">
+          <h3 class="text-xs sm:text-sm font-bold truncate">
+            Air Jordan 1 Mid
+          </h3>
+
+          <p class="text-[10px] sm:text-xs text-gray-500 mt-1">
+            Basketball Shoes
+          </p>
+
+          <div class="flex items-center justify-between gap-1 mt-2">
+            <span class="text-xs sm:text-sm font-bold">$125.00</span>
+            <span class="text-[10px] sm:text-xs text-gray-600">★ 4.9</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Product 4 -->
+      <div class="group min-w-0">
+
+        <div class="relative bg-gray-100 rounded-lg h-36 sm:h-44 md:h-48 p-3 overflow-hidden">
+
+          <button type="button"
+                  aria-label="Add New Balance 550 to wishlist"
+                  class="absolute top-2 right-2 z-10 text-gray-700 hover:!text-[#B4C542] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="w-5 h-5"
+                 fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+          </button>
+
+          <img src="./images/product4.png"
+               alt="New Balance 550"
+               loading="lazy"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+        <div class="pt-3">
+          <h3 class="text-xs sm:text-sm font-bold truncate">
+            New Balance 550
+          </h3>
+
+          <p class="text-[10px] sm:text-xs text-gray-500 mt-1">
+            Lifestyle Shoes
+          </p>
+
+          <div class="flex items-center justify-between gap-1 mt-2">
+            <span class="text-xs sm:text-sm font-bold">$110.00</span>
+            <span class="text-[10px] sm:text-xs text-gray-600">★ 4.7</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Product 5 -->
+      <div class="group min-w-0">
+
+        <div class="relative bg-gray-100 rounded-lg h-36 sm:h-44 md:h-48 p-3 overflow-hidden">
+
+          <button type="button"
+                  aria-label="Add Vans Old Skool to wishlist"
+                  class="absolute top-2 right-2 z-10 text-gray-700 hover:!text-[#B4C542] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 class="w-5 h-5"
+                 fill="none" viewBox="0 0 24 24"
+                 stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/>
+            </svg>
+          </button>
+
+          <img src="./images/product5.png"
+               alt="Vans Old Skool"
+               loading="lazy"
+               class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
+        </div>
+
+        <div class="pt-3">
+          <h3 class="text-xs sm:text-sm font-bold truncate">
+            Vans Old Skool
+          </h3>
+
+          <p class="text-[10px] sm:text-xs text-gray-500 mt-1">
+            Skate Shoes
+          </p>
+
+          <div class="flex items-center justify-between gap-1 mt-2">
+            <span class="text-xs sm:text-sm font-bold">$75.00</span>
+            <span class="text-[10px] sm:text-xs text-gray-600">★ 4.8</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- FEATURED PRODUCTS END -->
+
+
+
+<!-- SALE BANNERS START -->
+<section class="bg-white py-8 md:py-10">
+
+  <div class="max-w-screen-xl mx-auto px-5 md:px-8">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <!-- Banner 1: Just Dropped -->
+      <div class="relative overflow-hidden rounded-xl bg-[#111111] min-h-[220px] md:min-h-[250px] flex items-center">
+
+        <!-- Banner Content -->
+        <div class="relative z-10 w-1/2 p-5 md:p-7">
+
+          <span class="inline-block text-[#B4C542] text-[10px] font-bold tracking-widest uppercase mb-3">
+            New Collection
+          </span>
+
+          <h2 class="text-white text-xl md:text-2xl font-extrabold leading-tight">
+            Just Dropped
+          </h2>
+
+          <p class="text-gray-300 text-xs mt-2 leading-relaxed">
+            Check out the latest sneakers from top brands.
+          </p>
+
+          <a href="#"
+             class="inline-flex items-center gap-2 mt-5 bg-[#B4C542] text-black text-xs font-bold px-4 py-3 rounded hover:bg-white transition-colors">
+            Shop New Arrivals <span>→</span>
+          </a>
+
+        </div>
+
+        <!-- Shoe Image -->
+        <div class="absolute right-0 top-0 w-1/2 h-full flex items-center justify-center">
+
+          <img src="./images/images-removebg-preview (1).png"
+               alt="New sneaker collection"
+               loading="lazy"
+               class="w-full h-600 object-contain p-2 md:p-3 transition-transform duration-500 hover:scale-110">
+
+        </div>
+
+        <!-- Decorative Accent -->
+        <div class="absolute -right-8 -top-10 w-32 h-32 rounded-full border-[20px] border-[#B4C542]/10"></div>
+
+      </div>
+
+
+      <!-- Banner 2: Summer Sale -->
+      <div class="relative overflow-hidden rounded-xl bg-[#111111] min-h-[220px] md:min-h-[250px] flex items-center">
+
+        <!-- Banner Content -->
+        <div class="relative z-10 w-1/2 p-5 md:p-7">
+
+          <span class="inline-block text-[#B4C542] text-[10px] font-bold tracking-widest uppercase mb-3">
+            Summer Sale
+          </span>
+
+          <h2 class="text-white text-xl md:text-2xl font-extrabold leading-tight">
+            Up to 40% Off
+          </h2>
+
+          <p class="text-gray-300 text-xs mt-2 leading-relaxed">
+            Step into the season with your favorite styles.
+          </p>
+
+          <a href="#"
+             class="inline-flex items-center gap-2 mt-5 bg-[#B4C542] text-black text-xs font-bold px-4 py-3 rounded hover:bg-white transition-colors">
+            Shop The Sale <span>→</span>
+          </a>
+
+        </div>
+
+        <!-- Shoe Image -->
+        <div class="absolute right-0 top-0 w-1/2 h-full flex items-center justify-center">
+
+          <img src="./images/Best-Nike-Shoes-Nike-Zoom-Fly-6-removebg-preview.png"
+               alt="Summer sale sneakers"
+               loading="lazy"
+               class="w-1000 h-1000 object-contain p-2 md:p-3 transition-transform duration-500 hover:scale-110">
+
+        </div>
+
+        <!-- Decorative Accent -->
+        <div class="absolute -right-8 -bottom-10 w-36 h-36 rounded-full border-[20px] border-[#B4C542]/10"></div>
+
+        <span class="absolute right-3 top-2 text-[#B4C542]/20 text-5xl md:text-7xl font-black italic select-none">
+          40%
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SALE BANNERS END -->
+
+
+<!-- ================================
+     WHY SHOP WITH US SECTION
+================================ -->
+
+<section class="bg-white text-black py-12 px-5 md:px-10 lg:px-16">
+
+    <div class="container mx-auto">
+
+        <!-- SECTION HEADING -->
+        <div class="text-center mb-10">
+            <p class="text-sm font-semibold tracking-[3px] text-[#B4C542] mb-2">
+                THE SOLEX PROMISE
+            </p>
+
+            <h2 class="text-3xl md:text-4xl font-bold">
+                WHY SHOP WITH US?
+            </h2>
+        </div>
+
+        <!-- BENEFITS -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- FREE SHIPPING -->
+            <div class="text-center p-6">
+                <div class="flex justify-center mb-4">
+                    <svg class="w-10 h-10 text-[#B4C542]" fill="none"
+                        stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 7h11v10H3z M14 10h4l3 3v4h-7z M7 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                    </svg>
+                </div>
+
+                <h3 class="text-lg font-bold mb-2">FREE SHIPPING</h3>
+                <p class="text-sm text-gray-500">
+                    Enjoy free delivery on eligible orders.
+                </p>
+            </div>
+
+            <!-- EASY RETURNS -->
+            <div class="text-center p-6">
+                <div class="flex justify-center mb-4">
+                    <svg class="w-10 h-10 text-[#B4C542]" fill="none"
+                        stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 11a8 8 0 0 1 14-5l2 2 M19 3v5h-5 M21 13a8 8 0 0 1-14 5l-2-2 M5 21v-5h5"/>
+                    </svg>
+                </div>
+
+                <h3 class="text-lg font-bold mb-2">30-DAY RETURNS</h3>
+                <p class="text-sm text-gray-500">
+                    Shop with confidence and peace of mind.
+                </p>
+            </div>
+
+            <!-- AUTHENTIC PRODUCTS -->
+            <div class="text-center p-6">
+                <div class="flex justify-center mb-4">
+                    <svg class="w-10 h-10 text-[#B4C542]" fill="none"
+                        stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3z M9 12l2 2 4-4"/>
+                    </svg>
+                </div>
+
+                <h3 class="text-lg font-bold mb-2">100% AUTHENTIC</h3>
+                <p class="text-sm text-gray-500">
+                    Discover styles you can shop with confidence.
+                </p>
+            </div>
+
+            <!-- SECURE PAYMENTS -->
+            <div class="text-center p-6">
+                <div class="flex justify-center mb-4">
+                    <svg class="w-10 h-10 text-[#B4C542]" fill="none"
+                        stroke="currentColor" stroke-width="1.8"
+                        viewBox="0 0 24 24">
+                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 10h18 M7 15h3"/>
+                    </svg>
+                </div>
+
+                <h3 class="text-lg font-bold mb-2">SECURE PAYMENTS</h3>
+                <p class="text-sm text-gray-500">
+                    Enjoy a smooth and secure checkout experience.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- footer -->
+
+<footer class="bg-black text-white pt-14 pb-6 px-5 md:px-10 lg:px-16">
+
+    <div class="container mx-auto">
+
+        <!-- FOOTER MAIN CONTENT -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-gray-800">
+
+            <!-- BRAND INFO -->
+            <div>
+                <a href="#" class="inline-block text-3xl font-extrabold tracking-widest mb-4">
+                    SOL<span class="text-[#B4C542]">EX</span>
+                </a>
+
+                <p class="text-gray-400 text-sm leading-7 max-w-xs">
+                    Step into your style with SOLEX. Discover sneakers,
+                    sportswear and everyday essentials made for every step.
+                </p>
+
+                <!-- SOCIAL ICONS -->
+                <div class="flex items-center gap-4 mt-6">
+
+                    <a href="#" aria-label="Instagram"
+                       class="text-gray-400 hover:text-[#B4C542] transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                             stroke-width="1.8" viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" aria-label="Facebook"
+                       class="text-gray-400 hover:text-[#B4C542] transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.4V10H7v3h2.9v8h3.6z"/>
+                        </svg>
+                    </a>
+
+                    <a href="#" aria-label="TikTok"
+                       class="text-gray-400 hover:text-[#B4C542] transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.6 7.4a6.1 6.1 0 0 1-3.7-1.2v7.1a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1v3.3a2.8 2.8 0 1 0 1.6 2.5V2h3.3a6.1 6.1 0 0 0 3.7 3.7v1.7z"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h3 class="text-lg font-bold mb-5">
+                    QUICK LINKS
+                    <span class="block w-10 h-1 bg-[#B4C542] mt-2"></span>
+                </h3>
+
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-[#B4C542] transition-colors">Home</a></li>
+                    <li><a href="#brands" class="hover:text-[#B4C542] transition-colors">Brands</a></li>
+                    <li><a href="#categories" class="hover:text-[#B4C542] transition-colors">Shop by Category</a></li>
+                    <li><a href="#products" class="hover:text-[#B4C542] transition-colors">Featured Products</a></li>
+                    <li><a href="#sale" class="hover:text-[#B4C542] transition-colors">Sale & Offers</a></li>
+                </ul>
+            </div>
+
+            <!-- SHOPPING -->
+            <div>
+                <h3 class="text-lg font-bold mb-5">
+                    SHOPPING
+                    <span class="block w-10 h-1 bg-[#B4C542] mt-2"></span>
+                </h3>
+
+                <ul class="space-y-3 text-sm text-gray-400">
+                    <li><a href="#categories" class="hover:text-[#B4C542] transition-colors">Men's Collection</a></li>
+                    <li><a href="#categories" class="hover:text-[#B4C542] transition-colors">Women's Collection</a></li>
+                    <li><a href="#categories" class="hover:text-[#B4C542] transition-colors">Kids' Collection</a></li>
+                    <li><a href="#products" class="hover:text-[#B4C542] transition-colors">New Arrivals</a></li>
+                    <li><a href="#sale" class="hover:text-[#B4C542] transition-colors">Special Offers</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h3 class="text-lg font-bold mb-5">
+                    CONTACT US
+                    <span class="block w-10 h-1 bg-[#B4C542] mt-2"></span>
+                </h3>
+
+                <ul class="space-y-4 text-sm text-gray-400">
+
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#B4C542] shrink-0 mt-1"
+                             fill="none" stroke="currentColor" stroke-width="1.8"
+                             viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12z"/>
+                            <circle cx="12" cy="9" r="2.5"/>
+                        </svg>
+                        <span>Karachi, Pakistan</span>
+                    </li>
+
+                    <li class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-[#B4C542] shrink-0 mt-1"
+                             fill="none" stroke="currentColor" stroke-width="1.8"
+                             viewBox="0 0 24 24">
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="m3 7 9 6 9-6"/>
+                        </svg>
+                        <a href="mailto:hello@solex.com"
+                           class="hover:text-[#B4C542] transition-colors">
+                            hello@solex.com
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 text-sm text-gray-500">
+
+            <p class="text-center md:text-left">
+                © 2026 SOLEX. All rights reserved.
+            </p>
+
+            <p>
+                Designed with <span class="text-[#B4C542]">♥</span> for every step.
+            </p>
+
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>
